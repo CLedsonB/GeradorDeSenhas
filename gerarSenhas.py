@@ -11,10 +11,10 @@ from random import *
 def gerarSemente():
     print('  **Responda com s ou n\n  **Para especificar sua lista de senhas**\n')
     
-    sb = input('  1) Deve conter simbolos? ')
-    nr = input('  2) Deve conter numeros? ')
-    L =  input('  3) Deve conter letras maiusculas? ')
-    l = input('  4) Deve conter letras minusculas? ')
+    sb = input('  1) Deve conter simbolos?\n  >> ')
+    nr = input('  2) Deve conter numeros?\n  >> ')
+    L =  input('  3) Deve conter letras maiusculas?\n  >> ')
+    l = input('  4) Deve conter letras minusculas?\n  >> ')
     
     semente = ' '
     if sb == 's':
@@ -42,9 +42,9 @@ def gerarSenha():
     semente = gerarSemente()
     print('  **Responda com numeros\n  **Para gerar sua lista de senhas**\n')
         
-    tm = int(input('  1) Quantidade de caracteres? '))
-    qs = int(input('  2) Quantidade de senhas para gerar? '))
-    nome = input('  3) Nome do arquivo de saida com as senhas? ')
+    tm = int(input('  1) Quantidade de caracteres?\n  >> '))
+    qs = int(input('  2) Quantidade de senhas para gerar?\n  >> '))
+    nome = input('  3) Nome do arquivo de saida com as senhas?\n  >> ')
     nome += '.txt'
     
     for i in range(qs):
@@ -57,7 +57,7 @@ def gerarSenha():
         senha += '\n'
         with open(nome, 'a') as arquivo:
                 arquivo.write(senha)
-                
 
-
+#Run
 gerarSenha()
+print('\n\tArquivo criado, acesse sua pasta!!\n\n')
