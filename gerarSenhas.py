@@ -16,7 +16,7 @@ def gerarSemente():
     L =  input('  3) Deve conter letras maiusculas?\n  >> ')
     l = input('  4) Deve conter letras minusculas?\n  >> ')
     
-    semente = ' '
+    semente = ''
     if sb == 's':
         semente += s.punctuation
     if nr == 's':
@@ -46,14 +46,19 @@ def gerarSenha():
     qs = int(input('  2) Quantidade de senhas para gerar?\n  >> '))
     nome = input('  3) Nome do arquivo de saida com as senhas?\n  >> ')
     nome += '.txt'
-    
+    lista = []
     for i in range(qs):
         senha = ''
         for j in range(tm):
             previa = semente[randint(0,len(semente)-1)]
             senha = str(previa) + str(senha)
-            
-#salvar em um arquivo .txt
+
+#retirar valores repetidos
+        lista.append(senha)
+    set(lista)
+    
+#salvar em um arquivo.txt
+    for senha in lista:
         senha += '\n'
         with open(nome, 'a') as arquivo:
                 arquivo.write(senha)
