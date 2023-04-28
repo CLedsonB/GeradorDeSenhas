@@ -1,6 +1,7 @@
 import string as s
 import time as t
 from random import *
+import os
 
 #inputs do usuario
 #conter simbolos
@@ -30,7 +31,7 @@ def gerarSemente():
         exit()
         
     print('  \tEtapa concluida!!\n')
-    
+    t.sleep(3)
     semente = [x for x in semente]
     return semente
     
@@ -40,6 +41,7 @@ def gerarSemente():
     
 def gerarSenha():
     semente = gerarSemente()
+    os.system('clear')
     print('  **Responda com numeros\n  **Para gerar sua lista de senhas**\n')
         
     tm = int(input('  1) Quantidade de caracteres?\n  >> '))
@@ -56,9 +58,12 @@ def gerarSenha():
 #retirar valores repetidos
         lista.append(senha)
     set(lista)
+    print('\n')
     
 #salvar em um arquivo.txt
     for senha in lista:
+        print('\t',senha)
+        t.sleep(0.1)
         senha += '\n'
         with open(nome, 'a') as arquivo:
                 arquivo.write(senha)
